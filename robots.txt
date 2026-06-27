@@ -1,0 +1,14 @@
+# robots.txt for Mag Town Sialkot
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://magtown.com/sitemap.xml
+
+# Disallow specific paths if needed
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional)
+# Crawl-delay: 1

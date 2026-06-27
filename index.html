@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mag Town Sialkot — Premium housing society near China Chowk. 50+ acres gated community with 24/7 security, mosque, parks. Download official rules.">
+  <meta name="keywords" content="Mag Town, Sialkot, housing society, China Chowk, plots, property, gated community">
+  <meta name="author" content="Mag Town Sialkot">
+  <meta property="og:title" content="New Rules of Mag Town — Sialkot's Premium Housing Society">
+  <meta property="og:description" content="A new standard of living in the heart of Sialkot. Secure, designed, and built for families who demand more.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#facc15">
+  <link rel="canonical" href="https://magtown.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23facc15'/><text x='16' y='22' text-anchor='middle' font-family='Arial Black' font-size='18' fill='%23000'>MT</text></svg>">
+  <title>New Rules of Mag Town — Sialkot's Premium Housing Society</title>
+
+  <!-- Preconnect hints for external resources -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="mag-town.css">
+
+  <!-- Optimized Google Fonts with font-display: swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <style>
+    /* Inline critical CSS for initial render */
+    body { font-family: 'Inter', system-ui, sans-serif; background: #000; color: #ddd; overflow-x: hidden; }
+    .heading { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== SKIP LINK FOR ACCESSIBILITY ===== -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== WELCOME MODAL ===== -->
+  <div id="rulesWarningModal" class="modal-backdrop" style="display: flex;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="heading text-3xl text-black">⚠️ Important Notice</h3>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-error">
+          <i class="fas fa-exclamation-triangle text-2xl"></i>
+          <div>
+            <p class="font-bold text-lg">Read Before Proceeding</p>
+            <p class="text-sm">Failure to comply will result in penalties</p>
+          </div>
+        </div>
+        <p class="text-lg font-semibold mt-4">If you don't download or follow these rules, you are being irresponsible.</p>
+        <p class="text-zinc-600 mt-2">All residents must comply with the Mag Town Society Rules and Regulations. Ignorance of these rules is not an excuse. Violations will result in property sealing or heavy fines.</p>
+        <div class="mt-6 p-4 bg-red-50 border-2 border-red-400 rounded-xl">
+          <p class="font-bold text-black">Consequences:</p>
+          <p class="text-zinc-700">Property sealing and heavy fines for non-compliance. Download and read the rules now.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button onclick="downloadRules(); closeRulesWarning();" class="bg-[#facc15] text-black px-8 py-3 rounded-xl font-bold hover:bg-yellow-400 transition-colors">
+          <i class="fas fa-download mr-2"></i> Download Rules
+        </button>
+        <button onclick="closeRulesWarning();" class="bg-black text-white px-8 py-3 rounded-xl font-bold hover:bg-zinc-800 transition-colors">
+          I Understand
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCROLL PROGRESS BAR ===== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===== CURSOR DOT ===== -->
+  <div class="cursor-dot hidden" id="cursorDot"></div>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="backToTop"
+          class="fixed bottom-8 right-8 z-50 w-14 h-14 bg-[#facc15] border-4 border-black rounded-2xl brutal-shadow-sm opacity-0 invisible transition-all duration-300 hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-none flex items-center justify-center text-2xl font-black heading"
+          onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          aria-label="Back to top">
+    ↑
+  </button>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="fixed top-0 w-full bg-[#facc15] border-b-4 border-black z-50" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group" aria-label="Mag Town Home">
+        <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-[#facc15] font-black text-xl heading transition-transform duration-200 group-hover:scale-110">MT</div>
+        <span class="text-2xl font-black tracking-tight heading text-black">MAG TOWN</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="#rules" class="font-bold hover:underline underline-offset-4 decoration-4 decoration-black text-sm">Rules</a>
+        <a href="#amenities" class="font-bold hover:underline underline-offset-4 decoration-4 decoration-black text-sm">Amenities</a>
+        <a href="#gallery" class="font-bold hover:underline underline-offset-4 decoration-4 decoration-black text-sm">Gallery</a>
+        <a href="#team" class="font-bold hover:underline underline-offset-4 decoration-4 decoration-black text-sm">Team</a>
+        <a href="#pricing" class="font-bold hover:underline underline-offset-4 decoration-4 decoration-black text-sm">Pricing</a>
+        <a href="#news" class="font-bold hover:underline underline-offset-4 decoration-4 decoration-black text-sm">News</a>
+        <a href="#location" class="font-bold hover:underline underline-offset-4 decoration-4 decoration-black text-sm">Location</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <button onclick="downloadRules()" class="hidden sm:flex bg-black text-[#facc15] hover:bg-zinc-800 px-5 py-3 rounded-2xl font-bold text-sm items-center gap-2 brutal-shadow-sm transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none" aria-label="Download rules document">
+          <i class="fas fa-file-download"></i> <span>Download Rules</span>
+        </button>
+        <!-- Mobile menu toggle -->
+        <button id="mobileMenuToggle" class="lg:hidden w-11 h-11 bg-black text-[#facc15] rounded-2xl flex items-center justify-center font-bold text-lg" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#facc15] border-t-4 border-black px-6 py-6 space-y-4">
+      <a href="#rules" class="block font-black text-lg hover:underline underline-offset-4 decoration-4 decoration-black" onclick="toggleMobileMenu()">📜 Rules</a>
+      <a href="#amenities" class="block font-black text-lg hover:underline underline-offset-4 decoration-4 decoration-black" onclick="toggleMobileMenu()">🏠 Amenities</a>
+      <a href="#gallery" class="block font-black text-lg hover:underline underline-offset-4 decoration-4 decoration-black" onclick="toggleMobileMenu()">📸 Gallery</a>
+      <a href="#team" class="block font-black text-lg hover:underline underline-offset-4 decoration-4 decoration-black" onclick="toggleMobileMenu()">� Team</a>
+      <a href="#pricing" class="block font-black text-lg hover:underline underline-offset-4 decoration-4 decoration-black" onclick="toggleMobileMenu()">💰 Pricing</a>
+      <a href="#news" class="block font-black text-lg hover:underline underline-offset-4 decoration-4 decoration-black" onclick="toggleMobileMenu()">📰 News</a>
+      <a href="#location" class="block font-black text-lg hover:underline underline-offset-4 decoration-4 decoration-black" onclick="toggleMobileMenu()">📍 Location</a>
+      <button onclick="downloadRules(); toggleMobileMenu()" class="w-full bg-black text-[#facc15] py-4 rounded-2xl font-bold text-base brutal-shadow-sm">
+        <i class="fas fa-file-download mr-2"></i> Download Rules
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="main-content" class="hero-grid-bg min-h-screen flex items-center pt-24 border-b-4 border-black relative overflow-hidden" aria-label="Hero section">
+    <!-- Decorative blobs -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#facc15] rounded-full opacity-20 blur-3xl float-anim"></div>
+    <div class="absolute -bottom-24 -left-24 w-[30rem] h-[30rem] bg-[#f97316] rounded-full opacity-10 blur-3xl float-anim" style="animation-delay:-1.5s"></div>
+    <div class="absolute top-1/3 left-1/4 w-32 h-32 bg-[#facc15] rounded-full opacity-10 blur-2xl float-anim" style="animation-delay:-3s"></div>
+
+    <div class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- Left Content -->
+        <div class="reveal-left visible">
+          <div class="inline-flex items-center gap-2 bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-6 heading text-lg">
+            <i class="fas fa-crown"></i> PREMIUM HOUSING SOCIETY
+          </div>
+          <h1 class="heading text-7xl sm:text-8xl md:text-9xl leading-none text-black mb-6">
+            NEW RULES<br>
+            <span class="text-[#facc15]" style="-webkit-text-stroke: 3px #000;">OF MAG</span><br>
+            TOWN
+          </h1>
+          <p class="text-lg md:text-xl font-semibold mb-8 max-w-lg text-[#444]">
+            A new standard of living in the heart of Sialkot. Secure, designed, and built for families who demand more.
+          </p>
+
+          <!-- Stats row -->
+          <div class="flex gap-6 mb-8 flex-wrap">
+            <div class="bg-white border-2 border-black rounded-2xl px-5 py-3 brutal-shadow-sm text-center min-w-[90px]">
+              <span class="heading text-3xl text-[#facc15]" style="-webkit-text-stroke: 1.5px #000;">50+</span>
+              <p class="text-[10px] font-black uppercase tracking-wider">Acres</p>
+            </div>
+            <div class="bg-white border-2 border-black rounded-2xl px-5 py-3 brutal-shadow-sm text-center min-w-[90px]">
+              <span class="heading text-3xl text-[#facc15]" style="-webkit-text-stroke: 1.5px #000;">24/7</span>
+              <p class="text-[10px] font-black uppercase tracking-wider">Security</p>
+            </div>
+            <div class="bg-white border-2 border-black rounded-2xl px-5 py-3 brutal-shadow-sm text-center min-w-[90px]">
+              <span class="heading text-3xl text-[#facc15]" style="-webkit-text-stroke: 1.5px #000;">100%</span>
+              <p class="text-[10px] font-black uppercase tracking-wider">Approved</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <button onclick="downloadRules()" class="btn-3d bg-black text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center gap-3 brutal-shadow cursor-pointer" aria-label="Download rules">
+              <i class="fas fa-file-download"></i> Download Rules
+            </button>
+            <a href="#location" class="btn-3d bg-white border-4 border-black px-8 py-4 rounded-2xl font-bold text-lg flex items-center gap-3 brutal-shadow">
+              <i class="fas fa-location-dot"></i> Location
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Card -->
+        <div class="reveal-right visible">
+          <div class="bg-white border-4 border-black rounded-3xl brutal-shadow-lg p-8 text-center relative">
+            <div class="w-24 h-24 bg-[#facc15] border-4 border-black rounded-2xl flex items-center justify-center text-5xl mx-auto mb-5 brutal-shadow-sm">🏠</div>
+            <h3 class="heading text-5xl text-black">MAG TOWN</h3>
+            <p class="font-bold mt-1 text-lg">Sialkot's Finest Address</p>
+            <p class="text-zinc-500 text-sm mt-1">Near China Chowk, Sialkot Cantt</p>
+            <div class="mt-6 grid grid-cols-3 gap-4">
+              <div class="bg-[#fef9ef] border-2 border-black rounded-2xl p-3">
+                <p class="heading text-3xl text-[#facc15]" style="-webkit-text-stroke: 1.5px #000;">50+</p>
+                <p class="text-[10px] font-black">Acres</p>
+              </div>
+              <div class="bg-[#fef9ef] border-2 border-black rounded-2xl p-3">
+                <p class="heading text-3xl text-[#facc15]" style="-webkit-text-stroke: 1.5px #000;">24/7</p>
+                <p class="text-[10px] font-black">Security</p>
+              </div>
+              <div class="bg-[#fef9ef] border-2 border-black rounded-2xl p-3">
+                <p class="heading text-3xl text-[#facc15]" style="-webkit-text-stroke: 1.5px #000;">✔</p>
+                <p class="text-[10px] font-black">Approved</p>
+              </div>
+            </div>
+          </div>
+          <!-- Stamp -->
+          <div class="absolute -bottom-5 -right-5 bg-[#facc15] border-4 border-black rounded-2xl px-7 py-3 brutal-shadow-sm stamp">
+            <span class="heading text-3xl text-black">NEW RULES</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="bg-black border-b-4 border-[#facc15] py-5 overflow-hidden" aria-hidden="true">
+    <div class="marquee-inner flex whitespace-nowrap">
+      <!-- Repeated 2x for seamless loop -->
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ MAG TOWN SIALKOT — NEW RULES OF LIVING ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ PLOTS AVAILABLE — CONTACT TODAY ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ NEAR CHINA CHOWK — PRIME LOCATION ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ 24/7 SECURITY — PARK — MOSQUE ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ DOWNLOAD RULES — KNOW YOUR COMMUNITY ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ MAG TOWN SIALKOT — NEW RULES OF LIVING ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ PLOTS AVAILABLE — CONTACT TODAY ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ NEAR CHINA CHOWK — PRIME LOCATION ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ 24/7 SECURITY — PARK — MOSQUE ✦</span>
+      <span class="heading text-[#facc15] text-3xl mx-8">✦ DOWNLOAD RULES — KNOW YOUR COMMUNITY ✦</span>
+    </div>
+  </div>
+
+  <!-- ===== AMENITIES ===== -->
+  <section id="amenities" class="py-24 bg-white border-b-4 border-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-star mr-2"></i> AMENITIES
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">LIFE AT MAG TOWN</h2>
+        <p class="text-lg font-semibold mt-4 max-w-xl mx-auto">Everything your family needs, right where you need it.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children visible">
+
+        <div class="bg-[#fef9ef] border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card text-center sm:text-left">
+          <div class="w-14 h-14 bg-[#facc15] border-4 border-black rounded-2xl flex items-center justify-center text-2xl brutal-shadow-sm mx-auto sm:mx-0">🛡️</div>
+          <h3 class="text-2xl font-black mt-4">24/7 Security</h3>
+          <p class="font-medium mt-2 text-zinc-600">Gated community with CCTV, guards, and controlled entry. Your family's safety is our priority.</p>
+        </div>
+
+        <div class="bg-[#fef9ef] border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card text-center sm:text-left">
+          <div class="w-14 h-14 bg-[#facc15] border-4 border-black rounded-2xl flex items-center justify-center text-2xl brutal-shadow-sm mx-auto sm:mx-0">🌳</div>
+          <h3 class="text-2xl font-black mt-4">Parks & Green</h3>
+          <p class="font-medium mt-2 text-zinc-600">Lush parks, jogging tracks, kids' play areas, and landscaped green belts throughout the society.</p>
+        </div>
+
+        <div class="bg-[#fef9ef] border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card text-center sm:text-left">
+          <div class="w-14 h-14 bg-[#facc15] border-4 border-black rounded-2xl flex items-center justify-center text-2xl brutal-shadow-sm mx-auto sm:mx-0">🕌</div>
+          <h3 class="text-2xl font-black mt-4">Community Mosque</h3>
+          <p class="font-medium mt-2 text-zinc-600">Centrally located mosque within walking distance of every home. Five daily prayers and Jumu'ah.</p>
+        </div>
+
+        <div class="bg-[#fef9ef] border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card text-center sm:text-left">
+          <div class="w-14 h-14 bg-[#facc15] border-4 border-black rounded-2xl flex items-center justify-center text-2xl brutal-shadow-sm mx-auto sm:mx-0">⚡</div>
+          <h3 class="text-2xl font-black mt-4">Infrastructure</h3>
+          <p class="font-medium mt-2 text-zinc-600">Wide 40-ft roads, underground electricity, sewerage, gas, and high-speed fibre-ready.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE RULES ===== -->
+  <section id="rules" class="py-24 bg-[#fef9ef] border-b-4 border-black">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-6 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-xl">
+          <i class="fas fa-gavel mr-2"></i> THE NEW RULES
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">MAG TOWN CODE</h2>
+        <p class="text-lg font-semibold mt-4">Built on principles. Run by standards. Loved by residents.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children visible">
+
+        <div class="bg-white border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-start gap-4">
+            <span class="rule-num flex-shrink-0">01</span>
+            <div>
+              <h3 class="text-2xl font-black">Security First</h3>
+              <p class="font-medium mt-2 text-zinc-600">Every entry and exit is monitored 24/7. No unregistered vehicles enter without prior verification from security.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-start gap-4">
+            <span class="rule-num flex-shrink-0">02</span>
+            <div>
+              <h3 class="text-2xl font-black">No Commercial Disruption</h3>
+              <p class="font-medium mt-2 text-zinc-600">Residential zones are strictly residential. No shops, factories, or warehouses in living areas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-start gap-4">
+            <span class="rule-num flex-shrink-0">03</span>
+            <div>
+              <h3 class="text-2xl font-black">Clean & Green</h3>
+              <p class="font-medium mt-2 text-zinc-600">Every plot owner maintains their frontage. Waste disposal follows society guidelines. No dumping of debris.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-start gap-4">
+            <span class="rule-num flex-shrink-0">04</span>
+            <div>
+              <h3 class="text-2xl font-black">Construction Standards</h3>
+              <p class="font-medium mt-2 text-zinc-600">Setbacks, height limits (max 3 storeys), and boundary rules must be followed for a uniform community look.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-start gap-4">
+            <span class="rule-num flex-shrink-0">05</span>
+            <div>
+              <h3 class="text-2xl font-black">Monthly Maintenance</h3>
+              <p class="font-medium mt-2 text-zinc-600">Nominal fee covers security, streetlights, garbage collection, park upkeep, and sewage management.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-start gap-4">
+            <span class="rule-num flex-shrink-0">06</span>
+            <div>
+              <h3 class="text-2xl font-black">Community Respect</h3>
+              <p class="font-medium mt-2 text-zinc-600">No loud music after 10 PM. Pets on leashes. No street parking overnight. Neighbourhood first, always.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Download CTA -->
+      <div class="text-center mt-14 reveal">
+        <button onclick="downloadRules()" class="btn-3d bg-black text-white px-12 py-6 rounded-2xl font-bold text-xl flex items-center gap-3 brutal-shadow-lg mx-auto cursor-pointer pulse-glow" aria-label="Download full rules document">
+          <i class="fas fa-file-download text-[#facc15] text-2xl"></i>
+          <span>Download Full Rules</span>
+          <span class="text-sm text-zinc-400 hidden sm:inline">• 10 rules • 4 KB</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY MAG TOWN ===== -->
+  <section class="py-24 bg-black border-b-4 border-[#facc15] dark-section">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <div class="reveal">
+        <div class="inline-block bg-[#facc15] text-black font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-question-circle mr-2"></i> WHY CHOOSE US
+        </div>
+        <h2 class="heading text-5xl md:text-7xl text-[#facc15]">WHY MAG TOWN?</h2>
+        <p class="text-zinc-400 font-semibold mt-4 max-w-2xl mx-auto text-lg">Not just a plot. A complete lifestyle upgrade for you and your family.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 mt-12 stagger-children visible">
+        <div class="bg-zinc-900 border-2 border-zinc-700 rounded-3xl p-8 text-left tilt-card">
+          <p class="heading text-6xl text-[#facc15]">01</p>
+          <h4 class="text-white font-black text-2xl mt-2">Prime Location</h4>
+          <p class="text-zinc-400 mt-3 leading-relaxed">Near China Chowk, Sialkot Cantt — just <strong class="text-white">2 minutes</strong> from China Chowk and <strong class="text-white">5 minutes</strong> from Sialkot International Airport.</p>
+        </div>
+        <div class="bg-zinc-900 border-2 border-zinc-700 rounded-3xl p-8 text-left tilt-card">
+          <p class="heading text-6xl text-[#facc15]">02</p>
+          <h4 class="text-white font-black text-2xl mt-2">Approved & Legal</h4>
+          <p class="text-zinc-400 mt-3 leading-relaxed">All regulatory approvals in place. Clean documentation. Clear title. A <strong class="text-white">safe and secure</strong> investment for your family's future.</p>
+        </div>
+        <div class="bg-zinc-900 border-2 border-zinc-700 rounded-3xl p-8 text-left tilt-card">
+          <p class="heading text-6xl text-[#facc15]">03</p>
+          <h4 class="text-white font-black text-2xl mt-2">Rapid Appreciation</h4>
+          <p class="text-zinc-400 mt-3 leading-relaxed">Property values rising steadily. Early investors have already seen <strong class="text-white">2x returns</strong>. Now is the time to invest.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 mt-12 reveal">
+        <button onclick="downloadRules()" class="btn-3d bg-[#facc15] text-black px-8 py-5 rounded-2xl font-bold text-lg brutal-shadow border-4 border-[#facc15] cursor-pointer" aria-label="Download rules">
+          <i class="fas fa-file-download mr-2"></i> Download Rules
+        </button>
+        <a href="#contact" class="btn-3d bg-white text-black px-8 py-5 rounded-2xl font-bold text-lg brutal-shadow border-4 border-white">
+          <i class="fab fa-whatsapp mr-2"></i> Book a Visit
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="py-24 bg-white border-b-4 border-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-quote-left mr-2"></i> TESTIMONIALS
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">WHAT RESIDENTS SAY</h2>
+        <p class="text-lg font-semibold mt-4">Real people. Real stories. Real community.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 stagger-children visible">
+        <div class="bg-[#fef9ef] border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i>
+          </div>
+          <p class="font-medium text-zinc-700">"Mag Town is exactly what Sialkot needed. The security is top-notch and the community vibe is incredible. Best decision we ever made."</p>
+          <div class="flex items-center gap-3 mt-4 pt-4 border-t-2 border-black">
+            <div class="w-10 h-10 bg-black text-[#facc15] rounded-xl flex items-center justify-center font-black">AK</div>
+            <div>
+              <p class="font-black text-sm">Ahmed Khan</p>
+              <p class="text-xs text-zinc-500">Resident since 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#fef9ef] border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i>
+          </div>
+          <p class="font-medium text-zinc-700">"The parks and the mosque make it feel like a real community. Our kids play outside safely. Couldn't ask for more."</p>
+          <div class="flex items-center gap-3 mt-4 pt-4 border-t-2 border-black">
+            <div class="w-10 h-10 bg-black text-[#facc15] rounded-xl flex items-center justify-center font-black">SN</div>
+            <div>
+              <p class="font-black text-sm">Sadia Naveed</p>
+              <p class="text-xs text-zinc-500">Resident since 2023</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#fef9ef] border-4 border-black rounded-3xl p-6 brutal-shadow tilt-card">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i><i class="fas fa-star text-[#facc15]"></i>
+          </div>
+          <p class="font-medium text-zinc-700">"We invested early and the value has already doubled. Clean society, great management, and the rules actually make sense."</p>
+          <div class="flex items-center gap-3 mt-4 pt-4 border-t-2 border-black">
+            <div class="w-10 h-10 bg-black text-[#facc15] rounded-xl flex items-center justify-center font-black">RI</div>
+            <div>
+              <p class="font-black text-sm">Rizwan Iqbal</p>
+              <p class="text-xs text-zinc-500">Investor since 2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="py-24 bg-[#fef9ef] border-b-4 border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-circle-question mr-2"></i> FAQ
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">COMMON QUESTIONS</h2>
+        <p class="text-lg font-semibold mt-4">Everything you need to know about Mag Town.</p>
+      </div>
+
+      <div class="space-y-4 reveal">
+        <div class="faq-item bg-white border-4 border-black rounded-2xl overflow-hidden">
+          <button class="faq-question w-full text-left px-6 py-5 font-black text-lg flex items-center justify-between gap-4 hover:bg-zinc-50 transition-colors" onclick="toggleFAQ(this)">
+            <span>What plot sizes are available?</span>
+            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5 text-zinc-600 font-medium leading-relaxed">
+            We offer 5 Marla, 7 Marla, 10 Marla, and 1 Kanal residential plots. Contact us for current availability and pricing.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border-4 border-black rounded-2xl overflow-hidden">
+          <button class="faq-question w-full text-left px-6 py-5 font-black text-lg flex items-center justify-between gap-4 hover:bg-zinc-50 transition-colors" onclick="toggleFAQ(this)">
+            <span>Is Mag Town an approved society?</span>
+            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5 text-zinc-600 font-medium leading-relaxed">
+            Yes, Mag Town is a fully approved housing society with all regulatory clearances. Clean documentation and clear title.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border-4 border-black rounded-2xl overflow-hidden">
+          <button class="faq-question w-full text-left px-6 py-5 font-black text-lg flex items-center justify-between gap-4 hover:bg-zinc-50 transition-colors" onclick="toggleFAQ(this)">
+            <span>How does the monthly maintenance work?</span>
+            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5 text-zinc-600 font-medium leading-relaxed">
+            A nominal monthly fee covers security, street lighting, garbage collection, park maintenance, and sewage. Details are in the rules document.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border-4 border-black rounded-2xl overflow-hidden">
+          <button class="faq-question w-full text-left px-6 py-5 font-black text-lg flex items-center justify-between gap-4 hover:bg-zinc-50 transition-colors" onclick="toggleFAQ(this)">
+            <span>Can I visit the site before booking?</span>
+            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-5 text-zinc-600 font-medium leading-relaxed">
+            Absolutely. Click the "Book a Visit" button and we'll arrange a site tour at your convenience.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOCATION ===== -->
+  <section id="location" class="py-24 bg-white border-b-4 border-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-location-dot mr-2"></i> LOCATION
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">FIND US</h2>
+        <p class="text-lg font-semibold mt-4">Mag Town — Near China Chowk, Sialkot Cantt.</p>
+      </div>
+
+      <div class="bg-[#fef9ef] border-4 border-black rounded-3xl brutal-shadow p-8 lg:p-10 reveal">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-[#facc15] border-4 border-black rounded-2xl flex items-center justify-center text-2xl brutal-shadow-sm flex-shrink-0">📍</div>
+              <div>
+                <h4 class="text-2xl font-black">Mag Town Sialkot</h4>
+                <p class="font-semibold text-zinc-600">Near China Chowk, Sialkot Cantt</p>
+              </div>
+            </div>
+            <ul class="space-y-4 font-medium">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 bg-black text-[#facc15] rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5">✓</span>
+                <span>2 min drive from <strong>China Chowk</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 bg-black text-[#facc15] rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5">✓</span>
+                <span>5 min from <strong>Sialkot International Airport</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 bg-black text-[#facc15] rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5">✓</span>
+                <span>10 min from <strong>Sialkot Dry Port</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 bg-black text-[#facc15] rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5">✓</span>
+                <span>15 min from <strong>Sialkot city centre</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 bg-black text-[#facc15] rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5">✓</span>
+                <span>Direct access to <strong>main GT Road</strong></span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-black rounded-3xl p-8 text-center text-white border-4 border-[#facc15]">
+            <i class="fas fa-map-location-dot text-5xl text-[#facc15] mb-5"></i>
+            <p class="font-black text-2xl heading">MAG TOWN</p>
+            <p class="text-zinc-400 font-medium">Near China Chowk, Sialkot Cantt</p>
+            <div class="mt-6 border-t-2 border-zinc-700 pt-6">
+              <p class="text-sm text-zinc-500">
+                <i class="fas fa-search-location text-[#facc15] mr-1"></i> 
+                Search: <span class="text-[#facc15] font-bold">"Mag Town Sialkot" on Google Maps</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOWNLOAD ===== -->
+  <section id="download" class="py-24 bg-[#fef9ef] border-b-4 border-black">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-download mr-2"></i> DOWNLOAD
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">DOWNLOAD RULES</h2>
+        <p class="text-lg font-semibold mt-4 max-w-2xl mx-auto">Get the complete Mag Town rule book. Know your rights, responsibilities, and community standards — all in one document.</p>
+      </div>
+
+      <div class="mt-10 reveal-scale">
+        <div onclick="downloadRules()" 
+             class="cursor-pointer bg-[#facc15] border-4 border-black rounded-3xl brutal-shadow-lg p-12 hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all max-w-lg mx-auto group">
+          <div class="w-24 h-24 bg-black rounded-3xl flex items-center justify-center text-5xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-200">
+            <i class="fas fa-file-download text-[#facc15]"></i>
+          </div>
+          <p class="heading text-5xl text-black mb-2">Download Now</p>
+          <p class="font-bold text-black/70 text-lg">rules-of-mag-town.txt</p>
+          <div class="mt-4 inline-flex items-center gap-2 bg-black text-[#facc15] px-5 py-2 rounded-2xl font-bold text-sm">
+            <i class="fas fa-check-circle"></i> 4 KB • 10 Rules
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-8 text-sm font-medium text-zinc-500 reveal">
+        <i class="fas fa-check-circle text-green-600 mr-1"></i> 
+        Includes: Security, Commercial policy, Clean & Green, Construction standards, Maintenance fees, Community respect, and more.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-black py-14 border-t-4 border-[#facc15] dark-section">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-10 h-10 bg-[#facc15] rounded-2xl flex items-center justify-center text-black font-black heading text-xl">MT</div>
+            <span class="text-[#facc15] font-black heading text-2xl">MAG TOWN</span>
+          </div>
+          <p class="text-zinc-500 text-sm leading-relaxed">Sialkot's premium housing society. New Rules of Living.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-black mb-3 uppercase tracking-wider text-sm">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li><a href="#rules" class="hover:text-[#facc15] transition-colors">Rules</a></li>
+            <li><a href="#amenities" class="hover:text-[#facc15] transition-colors">Amenities</a></li>
+            <li><a href="#location" class="hover:text-[#facc15] transition-colors">Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Download -->
+        <div>
+          <h4 class="text-white font-black mb-3 uppercase tracking-wider text-sm">Resources</h4>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li><button onclick="downloadRules()" class="hover:text-[#facc15] transition-colors cursor-pointer text-left">📄 Download Rules</button></li>
+            <li><a href="#faq" class="hover:text-[#facc15] transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-white font-black mb-3 uppercase tracking-wider text-sm">Get in Touch</h4>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li><i class="fas fa-map-pin text-[#facc15] mr-2"></i> China Chowk, Sialkot</li>
+            <li><i class="fab fa-whatsapp text-[#facc15] mr-2"></i> 03XX-XXXXXXX</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-zinc-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-zinc-600">
+        <p>&copy; 2026 Mag Town Sialkot. All rights reserved.</p>
+        <p class="text-[#facc15] font-bold">New Rules of Living</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section id="gallery" class="py-24 bg-[#fef9ef] border-b-4 border-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-images mr-2"></i> GALLERY
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">EXPLORE MAG TOWN</h2>
+        <p class="text-lg font-semibold mt-4">See the beauty and progress of our premium housing society.</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=450&fit=crop" alt="Mag Town Entrance" loading="lazy">
+          <div class="gallery-overlay">
+            <p class="text-white font-bold">Main Entrance</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop" alt="Residential Area" loading="lazy">
+          <div class="gallery-overlay">
+            <p class="text-white font-bold">Residential Area</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop" alt="Community Park" loading="lazy">
+          <div class="gallery-overlay">
+            <p class="text-white font-bold">Community Park</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=450&fit=crop" alt="Modern Homes" loading="lazy">
+          <div class="gallery-overlay">
+            <p class="text-white font-bold">Modern Homes</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=450&fit=crop" alt="Wide Roads" loading="lazy">
+          <div class="gallery-overlay">
+            <p class="text-white font-bold">Wide Roads</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=450&fit=crop" alt="Night View" loading="lazy">
+          <div class="gallery-overlay">
+            <p class="text-white font-bold">Night View</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM SECTION ===== -->
+  <section id="team" class="py-24 bg-white border-b-4 border-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-users mr-2"></i> OUR TEAM
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">MEET THE EXPERTS</h2>
+        <p class="text-lg font-semibold mt-4">Dedicated professionals committed to your dream home.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-children visible">
+        <div class="team-card reveal">
+          <div class="team-image">
+            <div class="team-placeholder">👨‍💼</div>
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-black">Ahmed Khan</h3>
+            <p class="text-zinc-600 font-medium">CEO & Founder</p>
+            <div class="team-social justify-center">
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-image">
+            <div class="team-placeholder">👩‍💼</div>
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-black">Sara Ahmed</h3>
+            <p class="text-zinc-600 font-medium">Operations Director</p>
+            <div class="team-social justify-center">
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-image">
+            <div class="team-placeholder">👨‍🔧</div>
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-black">Rizwan Iqbal</h3>
+            <p class="text-zinc-600 font-medium">Project Manager</p>
+            <div class="team-social justify-center">
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-image">
+            <div class="team-placeholder">👩‍💻</div>
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-black">Fatima Ali</h3>
+            <p class="text-zinc-600 font-medium">Sales Manager</p>
+            <div class="team-social justify-center">
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING SECTION ===== -->
+  <section id="pricing" class="py-24 bg-[#fef9ef] border-b-4 border-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-tags mr-2"></i> PRICING
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">INVESTMENT PLANS</h2>
+        <p class="text-lg font-semibold mt-4">Flexible payment options to suit your needs.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 stagger-children visible">
+        <div class="pricing-card brutal-shadow reveal">
+          <h3 class="text-2xl font-black mb-2">5 Marla</h3>
+          <p class="text-zinc-600 mb-4">Perfect for small families</p>
+          <div class="pricing-price">2.5M<span>/marla</span></div>
+          <ul class="pricing-features">
+            <li>25 x 50 ft plot</li>
+            <li>3-year payment plan</li>
+            <li>Monthly installment: 70K</li>
+            <li>Free membership</li>
+            <li>All amenities included</li>
+          </ul>
+          <button onclick="showContactModal()" class="w-full bg-black text-white py-4 rounded-xl font-bold hover:bg-zinc-800 transition-colors">Book Now</button>
+        </div>
+
+        <div class="pricing-card featured brutal-shadow-lg reveal">
+          <h3 class="text-2xl font-black mb-2">10 Marla</h3>
+          <p class="text-zinc-600 mb-4">Most popular choice</p>
+          <div class="pricing-price">2.4M<span>/marla</span></div>
+          <ul class="pricing-features">
+            <li>35 x 65 ft plot</li>
+            <li>4-year payment plan</li>
+            <li>Monthly installment: 50K</li>
+            <li>Free membership</li>
+            <li>Premium location</li>
+          </ul>
+          <button onclick="showContactModal()" class="w-full bg-[#facc15] text-black py-4 rounded-xl font-bold hover:bg-yellow-400 transition-colors">Book Now</button>
+        </div>
+
+        <div class="pricing-card brutal-shadow reveal">
+          <h3 class="text-2xl font-black mb-2">1 Kanal</h3>
+          <p class="text-zinc-600 mb-4">Luxury living space</p>
+          <div class="pricing-price">2.2M<span>/marla</span></div>
+          <ul class="pricing-features">
+            <li>50 x 90 ft plot</li>
+            <li>5-year payment plan</li>
+            <li>Monthly installment: 37K</li>
+            <li>VIP membership</li>
+            <li>Corner plots available</li>
+          </ul>
+          <button onclick="showContactModal()" class="w-full bg-black text-white py-4 rounded-xl font-bold hover:bg-zinc-800 transition-colors">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS SECTION ===== -->
+  <section id="news" class="py-24 bg-white border-b-4 border-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-block bg-black text-[#facc15] font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-newspaper mr-2"></i> LATEST NEWS
+        </div>
+        <h2 class="heading text-6xl md:text-8xl text-black leading-none">UPDATES & EVENTS</h2>
+        <p class="text-lg font-semibold mt-4">Stay informed about Mag Town developments.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 stagger-children visible">
+        <article class="news-card brutal-shadow reveal">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=340&fit=crop" alt="New Mosque Construction" class="news-image" loading="lazy">
+          <div class="news-content">
+            <div class="news-date">January 15, 2026</div>
+            <h3 class="news-title">Grand Mosque Construction Begins</h3>
+            <p class="news-excerpt">Construction has started on our centerpiece community mosque, expected to complete by December 2026.</p>
+            <a href="#" class="inline-block mt-4 font-bold text-[#facc15] hover:underline">Read More →</a>
+          </div>
+        </article>
+
+        <article class="news-card brutal-shadow reveal">
+          <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&h=340&fit=crop" alt="Park Development" class="news-image" loading="lazy">
+          <div class="news-content">
+            <div class="news-date">January 10, 2026</div>
+            <h3 class="news-title">Central Park 60% Complete</h3>
+            <p class="news-excerpt">Our 5-acre central park is taking shape with jogging tracks, play areas, and beautiful landscaping.</p>
+            <a href="#" class="inline-block mt-4 font-bold text-[#facc15] hover:underline">Read More →</a>
+          </div>
+        </article>
+
+        <article class="news-card brutal-shadow reveal">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=340&fit=crop" alt="Road Infrastructure" class="news-image" loading="lazy">
+          <div class="news-content">
+            <div class="news-date">January 5, 2026</div>
+            <h3 class="news-title">Main Boulevard Paving Complete</h3>
+            <p class="news-excerpt">The 120-ft main boulevard is now fully paved with street lighting and underground utilities.</p>
+            <a href="#" class="inline-block mt-4 font-bold text-[#facc15] hover:underline">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER SECTION ===== -->
+  <section class="newsletter-section">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="reveal">
+        <div class="inline-block bg-[#facc15] text-black font-bold px-5 py-2 rounded-2xl brutal-shadow-sm mb-5 heading text-lg">
+          <i class="fas fa-envelope mr-2"></i> NEWSLETTER
+        </div>
+        <h2 class="heading text-5xl md:text-7xl text-[#facc15] mb-4">STAY UPDATED</h2>
+        <p class="text-zinc-400 text-lg mb-8">Subscribe to get the latest news, updates, and exclusive offers.</p>
+      </div>
+
+      <form class="newsletter-form reveal" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success'); this.reset();">
+        <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+        <button type="submit" class="newsletter-button">Subscribe</button>
+      </form>
+
+      <p class="text-zinc-500 text-sm mt-4 reveal">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <script src="script.js" defer></script>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Mag Town Sialkot",
+    "description": "Premium housing society near China Chowk, Sialkot Cantt",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sialkot",
+      "addressRegion": "Punjab",
+      "addressCountry": "PK"
+    },
+    "url": "https://magtown.com"
+  }
+  </script>
+
+</body>
+</html>
